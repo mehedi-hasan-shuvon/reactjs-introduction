@@ -20,34 +20,34 @@ function App() {
   return (
     <div className="App">
 
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
+      <Person name='Rubel' nayika="moushumi"></Person>
+      <Person name='BappaRaz' nayika='cheka'></Person>
+      <Person name="Kuber" nayika='Kopila'></Person>
       <h5>new component</h5>
-      <Friend></Friend>
-      <Friend></Friend>
+      <Friend phone="017777" movie="singum"></Friend>
+      <Friend phone="019999"></Friend>
 
 
     </div>
   );
 }
 
-function Person() {
+function Person(props) {
+  console.log(props);
   return (
     <div className='person'>
-      <h1>Sakib al Hasan</h1>
-      <p>Profession: criceketer</p>
+      <h1>{props.name}</h1>
+      <p>Nayika: {props.nayika}</p>
     </div>
   );
 }
 
-function Friend() {
-
+function Friend(props) {
+  console.log(props);
   return (
     <div className='container'>
-      <h3>Name: Ajay devgun</h3>
-      <p>job: maramari</p>
+      <h3>Name: {props.movie}</h3>
+      <p>phone: {props.phone}</p>
     </div>
   );
 }
