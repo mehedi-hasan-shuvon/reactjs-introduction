@@ -17,12 +17,23 @@ const singerStyle = {
 }
 
 function App() {
+
+  const nayoks = ['Rubel', 'Bapparaz', 'Kuber', 'jashim', 'salman Shah','anowar'];
+
   return (
     <div className="App">
+      {
+        nayoks.map(nayok => <li> Name: {nayok}</li>)
 
-      <Person name='Rubel' nayika="moushumi"></Person>
-      <Person name='BappaRaz' nayika='cheka'></Person>
-      <Person name="Kuber" nayika='Kopila'></Person>
+      }
+
+      {
+        nayoks.map(nayok => <Person name={nayok}></Person>)
+      }
+
+      {/* <Person name={nayoks[0]} nayika="moushumi"></Person>
+      <Person name={nayoks[1]} nayika='cheka'></Person>
+      <Person name={nayoks[2]} nayika='Kopila'></Person> */}
       <h5>new component</h5>
       <Friend phone="017777" movie="singum"></Friend>
       <Friend phone="019999"></Friend>
@@ -37,7 +48,7 @@ function Person(props) {
   return (
     <div className='person'>
       <h1>{props.name}</h1>
-      <p>Nayika: {props.nayika}</p>
+      <p>{props.nayika}</p>
     </div>
   );
 }
